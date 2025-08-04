@@ -1,8 +1,23 @@
-let score = 0;
-const scoreDisplay = document.getElementById('touched-times');
-const button = document.getElementById('touch');
+const box = document.getElementById("box");
 
-button.addEventListener('touch', () => {
-  touch++;
-  scoreDisplay.textContent = touch;
+// Start position
+let posX = 200;
+let posY = 200;
+
+// Listen for key presses
+document.addEventListener("keydown", function (event) {
+  const step = 10; // pixels to move
+
+  if (event.key === "ArrowUp") {
+    posY -= step;
+  } else if (event.key === "ArrowDown") {
+    posY += step;
+  } else if (event.key === "ArrowLeft") {
+    posX -= step;
+  } else if (event.key === "ArrowRight") {
+    posX += step;
+  }
+
+  box.style.left = posX + "px";
+  box.style.top = posY + "px";
 });
