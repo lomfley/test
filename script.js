@@ -8,13 +8,13 @@ let posY = 200;
 document.addEventListener("keydown", function (event) {
   const step = 10; // pixels to move
 
-  if (event.key === "Key S") {
+  if (event.key === "s") {
     posY -= step;
-  } else if (event.key === "Key W") {
+  } else if (event.key === "w") {
     posY += step;
-  } else if (event.key === "Key A") {
+  } else if (event.key === "a") {
     posX -= step;
-  } else if (event.key === " Key D") {
+  } else if (event.key === "d") {
     posX += step;
   }
 
