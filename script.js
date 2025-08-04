@@ -1,8 +1,8 @@
 let score = 0;
-const scoreDisplay = document.getElementById('score');
-const button = document.getElementById('clickBtn');
+const scoreDisplay = document.getElementById('touched-times');
+const button = document.getElementById('touch');
 
-button.addEventListener('click', () => {
+button.addEventListener('touch', () => {
   score++;
   scoreDisplay.textContent = score;
 });
