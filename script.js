@@ -3,6 +3,6 @@ const scoreDisplay = document.getElementById('touched-times');
 const button = document.getElementById('touch');
 
 button.addEventListener('touch', () => {
-  score++;
-  scoreDisplay.textContent = score;
+  touch++;
+  scoreDisplay.textContent = touch;
 });
