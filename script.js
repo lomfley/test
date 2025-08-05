@@ -29,28 +29,28 @@ function updateBoxPosition() {
   box.style.left = posX + "px";
   box.style.top = posY + "px";
 
-  // Check collision with target
-  if (isColliding(box, target)) {
+  if (isColliding()) {
     moveTargetRandomly();
   }
 
   requestAnimationFrame(updateBoxPosition);
 }
 
-function isColliding(elem1, elem2) {
-  const rect1 = elem1.getBoundingClientRect();
-  const rect2 = elem2.getBoundingClientRect();
+function isColliding() {
+  const boxSize = 50;
+
+  const targetX = parseInt(target.style.left);
+  const targetY = parseInt(target.style.top);
 
   return !(
-    rect1.right < rect2.left ||
-    rect1.left > rect2.right ||
-    rect1.bottom < rect2.top ||
-    rect1.top > rect2.bottom
+    posX + boxSize < targetX ||
+    posX > targetX + boxSize ||
+    posY + boxSize < targetY ||
+    posY > targetY + boxSize
   );
 }
 
 function moveTargetRandomly() {
-  // Get viewport dimensions minus box size (to keep it visible)
   const maxX = window.innerWidth - target.offsetWidth;
   const maxY = window.innerHeight - target.offsetHeight;
 
