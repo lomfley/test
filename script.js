@@ -1,7 +1,7 @@
 const box = document.getElementById("box");
 
-let posX = 200;
-let posY = 200;
+let posX = 400;
+let posY = 20;
 
 const keysPressed = {};
 
@@ -14,15 +14,15 @@ document.addEventListener("keyup", (event) => {
 });
 
 function updateBoxPosition() {
-  const step = 5;
+  const step = 3;
 
   if (keysPressed["w"]) posY -= step;
   if (keysPressed["s"]) posY += step;
   if (keysPressed["a"]) posX -= step;
   if (keysPressed["d"]) posX += step;
   if (keysPressed[" "]) {
-    posX = 200;
-    posY = 200;
+    posX = 400;
+    posY = 20;
   }
 
   box.style.left = posX + "px";
