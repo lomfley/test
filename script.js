@@ -10,14 +10,19 @@ document.addEventListener("keydown", function (event) {
 
   const key = event.key.toLowerCase();
 
-  if (event.key === "s") {
+  if (event.key === "w") {
     posY -= step;
-  } else if (event.key === "w") {
+  } else if (event.key === "s") {
     posY += step;
   } else if (event.key === "a") {
     posX -= step;
   } else if (event.key === "d") {
     posX += step;
+  } else if (event.key === "Space"){
+    posX = 200;
+    posY = 200;
+    box.style.left = posX + "px";
+    pox.style.left = posY + "px";
   }
 
   box.style.left = posX + "px";
